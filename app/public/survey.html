@@ -35,7 +35,7 @@
                        <form>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Example select</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <select class="form-control" id="question1">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="form-group">
                                 <label for="exampleFormControlSelect1">Example select</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
+                                <select class="form-control" id="question2">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -55,7 +55,7 @@
                             </div>
                             <div class="form-group">
                                     <label for="exampleFormControlSelect1">Example select</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
+                                    <select class="form-control" id="question3">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -66,7 +66,7 @@
                        </form> 
                     </div>   
                   </div>
-                  
+                  <button type="submit" class="btn btn-primary submit">Submit</button>
                 </div>
               </div>    
     
@@ -130,24 +130,26 @@
 <script type="text/javascript">
     $(".submit").on("click", function(event) {
         event.preventDefault();
-        var reservation = {
-            first_name: $("#first_name").val().trim(),
-            last_name: $("#last_name").val().trim(),
-            phone_number: $("#phone_number").val().trim(),
-            email: $("#email").val().trim()
+        var user = {
+            email: $("#useremail").val().trim(),
+            photo: $("#useremail").val().trim(),
+            answer1: $("#question1"),
+            answer2: $("#question2"),
+            answer3: $("#question3"),
         };
-        $.post("/api/reservations", reservation,
-            function(data) {
-                if (data) {
-                  alert("Yay! You are officially booked!");
-                }
-                else {
-                  alert("Sorry you are on the wait list");
-                }
-                $("#first_name").val("");
-                $("#last_name").val("");
-                $("#phone_number").val("");
-                $("#email").val("");
-            });
+        console.log(user.email)
+        // $.post("/api/reservations", reservation,
+        //     function(data) {
+        //         if (data) {
+        //           alert("Yay! You are officially booked!");
+        //         }
+        //         else {
+        //           alert("Sorry you are on the wait list");
+        //         }
+        //         $("#first_name").val("");
+        //         $("#last_name").val("");
+        //         $("#phone_number").val("");
+        //         $("#email").val("");
+        //     });
     });
 </script>
