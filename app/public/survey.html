@@ -132,24 +132,25 @@
         event.preventDefault();
         var user = {
             email: $("#useremail").val().trim(),
-            photo: $("#useremail").val().trim(),
+            photo: $("#userphoto").val().trim(),
             answer1: $("#question1"),
             answer2: $("#question2"),
             answer3: $("#question3"),
         };
         console.log(user.email)
-        // $.post("/api/reservations", reservation,
-        //     function(data) {
-        //         if (data) {
-        //           alert("Yay! You are officially booked!");
-        //         }
-        //         else {
-        //           alert("Sorry you are on the wait list");
-        //         }
-        //         $("#first_name").val("");
-        //         $("#last_name").val("");
-        //         $("#phone_number").val("");
-        //         $("#email").val("");
-        //     });
+        $.post("/api/friendfinder", friend,
+            function(data) {
+                // if (data) {
+                //   alert("Yay! You are officially booked!");
+                // }
+                // else {
+                //   alert("Sorry you are on the wait list");
+                // }
+                $("#useremail").val("");
+                $("#userphoto").val("");
+                $("#question1").val("");
+                $("#question2").val("");
+                $("#question3").val("");
+            });
     });
 </script>
