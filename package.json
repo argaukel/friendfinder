@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/argaukel/friendfinder/issues"
   },
-  "homepage": "https://github.com/argaukel/friendfinder#readme"
+  "homepage": "https://github.com/argaukel/friendfinder#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
